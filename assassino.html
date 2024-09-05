@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Assassino do jogo Coup e seu poder">
+  <title>Assassino - Jogo Coup</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="container">
+    <h1>Assassino</h1>
+    <p>Poder: Pague 3 moedas para o Tesouro Central e tente assassinar outro jogador. Se for bem sucedido, aquele jogador perde imediatamente uma influência. (Pode ser bloqueada pela Condessa)</p>
+
+    <button id="repetir" aria-label="Repetir nome e poder do Assassino">Repetir poder do Assassino</button>
+    <button id="poderes" aria-label="Relembrar poderes dos personagens">Relembrar poderes de todos os personagens</button>
+    <button id="acoes" aria-label="Relembrar ações que você pode fazer por rodada">Relembrar ações da rodada</button>
+    <button onclick="window.history.back();" aria-label="Voltar à página inicial">Voltar</button>
+  </div>
+
+  <script>
+    // Função para repetir o poder do Assassino
+    const repetirButton = document.getElementById('repetir');
+    repetirButton.addEventListener('click', () => {
+      alert('Assassino: Poder: Pague 3 moedas para o Tesouro Central e tente assassinar outro jogador. Se for bem sucedido, aquele jogador perde imediatamente uma influência. (Pode ser bloqueada pela Condessa)');
+    });
+
+    // Função para descrever poderes de todos os personagens
+    const poderesButton = document.getElementById('poderes');
+    poderesButton.addEventListener('click', () => {
+      alert('Duque: Pegue 3 moedas do Tesouro Central e bloquear a ação de "Ajuda Estrangeira".\n\nAssassino: Poder: Pague 3 moedas para o Tesouro Central e tente assassinar outro jogador. Se for bem sucedido, aquele jogador perde imediatamente uma influência. (Pode ser bloqueada pela Condessa)\n\nCondessa:  O jogador que está sendo assassinado pode reivindicar a Condessa e bloquear o assassinato. O assassinato falha, mas a taxa paga pelo jogador para o Assassino permanece gasta.\n\nCapitão: Pegue 2 moedas de outro jogador. Se ele só tiver uma moeda, pegue apenas uma. (Pode ser bloqueada pelo Embaixador ou pelo Capitão)\n\nEmbaixador: Primeiro pegue 2 cartas aleatórias do Baralho da Corte. Troque de zero a duas destas com as suas cartas viradas para baixo e devolva duas cartas para o Baralho da Corte.\n\nO Inquisidor pode escolher entre:\nOlhar a carta de influência de outro jogador e decidir se ele deve trocar essa carta com o Baralho da Corte.\nPegar 1 carta do Baralho da Corte, e trocar ou não por uma de suas cartas de influência, devolvendo uma para o baralho.');
+    });
+
+    // Função para descrever ações disponíveis na rodada
+    const acoesButton = document.getElementById('acoes');
+    acoesButton.addEventListener('click', () => {
+      alert('Pegue 1 moeda: Coleta 1 moeda do Tesouro Central. Esta ação não pode ser bloqueada por nenhum outro jogador.\n\nPegue 2 moedas: Coleta 2 moedas do Tesouro Central (Ajuda Estrangeira). No entanto, esta ação pode ser bloqueada pelo Duque.\n\nDeclare golpe (Coup) por 7 moedas: Gasta 7 moedas para realizar um golpe forçado em outro jogador. O jogador alvo deve perder uma de suas cartas de influência, e essa ação não pode ser bloqueada ou desafiada.\n\nUse o poder do seu personagem: Você pode usar o poder especial do personagem que reivindicar (como o Duque, Assassino, Capitão, Embaixador ou Inquisidor). Algumas dessas ações podem ser bloqueadas por outros personagens, dependendo da habilidade usada.');
+    });
+  </script>
+</body>
+
+</html>
